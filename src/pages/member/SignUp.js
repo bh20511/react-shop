@@ -1,30 +1,27 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import AuthContext from "../../contexts/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
 
-const Login = () => {
+import { useNavigate } from "react-router-dom";
+
+const SignUp = () => {
   const navigate = useNavigate();
-
-  const { setMyAuth } = useContext(AuthContext);
   const [member, setMember] = useState({
     email: "",
     password: "",
+    nickname :"",
   });
 
-  async function member_login() {
+  async function member_signUp() {
     // console.log(member);
-    const member_login = "http://localhost:3005/member/login/api";
-    const { data } = await axios.post(member_login, member);
+    const member_signUp = "http://localhost:3005/member/signUp/api";
+    const { data } = await axios.post(member_signUp, member);
     console.log(data);
-    if (data.success) {
-      localStorage.setItem("auth", JSON.stringify(data));
-      setMyAuth({ ...data, authorised: true });
-      alert("登入成功");
-      navigate("/");
-    } else {
-      localStorage.removeItem("auth");
-      alert("登入失敗");
+    // alert('註冊成功')
+    if(data.success){
+        alert('註冊成功')
+        navigate('/')
+    }else{
+        alert(data.error)
     }
   }
 
@@ -64,25 +61,34 @@ const Login = () => {
           />
         </div>
 
+        <div className="mb-3">
+          <label htmlFor="nickname" className="form-label">
+            暱稱
+          </label>
+          <input
+            type="nickname"
+            className="form-control"
+            id="nickname"
+            onChange={(e) => {
+              const nickname = e.target.value;
+              setMember({ ...member, nickname: nickname });
+            }}
+          />
+        </div>
+
         <button
           type="submit"
           className="btn btn-primary"
           onClick={(e) => {
             e.preventDefault();
-            member_login();
+            member_signUp();
           }}
         >
-          登入
-        </button>
-
-        <button type="button" className="btn btn-primary ms-3">
-          <Link to="/signUp" className="nav-link">
-            註冊會員
-          </Link>
+          註冊會員
         </button>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;
