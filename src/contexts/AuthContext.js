@@ -29,12 +29,12 @@ export const AuthContextProvider = function ({ children }) {
   const logout = () => {
     localStorage.removeItem("auth");
     setMyAuth(unAuth);
-    alert('登出成功')
-    navigate('/')
+    alert("登出成功");
+    navigate("/home");
   };
 
   return (
-    <AuthContext.Provider value={{ myAuth, setMyAuth ,logout }}>
+    <AuthContext.Provider value={{ myAuth, setMyAuth, logout }}>
       {children}
     </AuthContext.Provider>
   );

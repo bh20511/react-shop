@@ -1,10 +1,20 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
 
 const Nav = () => {
-  const { myAuth, setmyAuth, logout } = useContext(AuthContext);
+  const { myAuth, logout } = useContext(AuthContext);
   // console.log(myAuth);
+
+  const location = useLocation();
+  const seg1 = location.pathname.split("/")[1];
+
+  const actives = {};
+  actives[seg1] = {
+    backgroundColor: "yellow",
+    borderRadius: "10px",
+  };
+
   return (
     <nav
       className="navbar navbar-expand-lg bg-body-tertiary "
@@ -32,10 +42,11 @@ const Nav = () => {
           <ul className="navbar-nav w-100">
             <li className="nav-item">
               <Link
-                to="/"
+                to="/home"
                 className="nav-link active"
                 aria-current="page"
                 href="#"
+                style={actives.home}
               >
                 首頁
               </Link>
@@ -46,18 +57,38 @@ const Nav = () => {
               </a>
             </li> */}
             <li className="nav-item">
-              <Link to="/" className="nav-link" href="#">
+              <Link
+                to="/product"
+                className="nav-link"
+                href="#"
+                style={actives.product}
+              >
                 購物
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/token"
+                className="nav-link"
+                href="#"
+                style={actives.token}
+              >
+                測試token頁面
               </Link>
             </li>
 
             <li
               className="nav-item"
-              style={{ margin: "0 0 0 auto", display: "flex" }}
+              style={{
+                width: "200px",
+                margin: "0 0 0 auto",
+                display: "flex",
+                justifyContent: "center",
+              }}
             >
               {myAuth.authorised ? (
                 <>
-                  <Link to="/login" className="nav-link">
+                  <Link to="/login" className="nav-link" style={actives.login}>
                     {myAuth.nickname}
                   </Link>
                   <a
@@ -73,7 +104,7 @@ const Nav = () => {
                 </>
               ) : (
                 <>
-                  <Link to="/login" className="nav-link">
+                  <Link to="/login" className="nav-link" style={actives.login}>
                     Login
                   </Link>
                 </>
