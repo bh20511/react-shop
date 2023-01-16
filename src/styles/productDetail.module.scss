@@ -1,0 +1,23 @@
+.container{
+    width:1200px;
+    height:1000px;
+    margin:0 auto;
+    border:1px solid black;
+    
+}
+.product_all{
+    width: 100%;
+    display:flex;
+    //justify-content: center;
+}
+
+.imgwrap{
+    width: 50%;
+    height:500px;
+    // background-color:blue;
+}
+.productIntrodution{
+    width: 50%;
+    height:500px;
+    // background-color:red;
+}

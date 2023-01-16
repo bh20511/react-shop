@@ -11,23 +11,26 @@ import Token from "./pages/Token";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
+
 const App = () => {
   return (
-    <BrowserRouter>
-      <AuthContextProvider>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          
-          <Route path="/token" element={<Token />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signUp" element={<SignUp />} />
-        </Routes>
-      </AuthContextProvider>
-    </BrowserRouter>
+    
+      <BrowserRouter>
+        <AuthContextProvider>
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/product/:sid" element={<ProductDetail />} />
+
+            <Route path="/token" element={<Token />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signUp" element={<SignUp />} />
+          </Routes>
+        </AuthContextProvider>
+      </BrowserRouter>
   );
 };
 
