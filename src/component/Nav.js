@@ -86,6 +86,11 @@ const Nav = () => {
                 justifyContent: "center",
               }}
             >
+              <>
+                <Link to="/cart" className="nav-link" style={actives.login}>
+                  <i className="fa-solid fa-cart-shopping"></i>
+                </Link>
+              </>
               {myAuth.authorised ? (
                 <>
                   <Link to="/login" className="nav-link" style={actives.login}>

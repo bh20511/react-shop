@@ -21,9 +21,9 @@ const ProductDetail = () => {
 
   //加入購物車按鈕
   const handle = () => {
-    const { price, name, img } = data[0];
-    console.log(sid, name, price, img, amount);
-    dispatch(addCart({ sid, name, price, img, amount }));
+    const { price, name, img, inventory } = data[0];
+    console.log(sid, name, price, img, amount ,inventory);
+    dispatch(addCart({ sid, name, price, img, amount,inventory }));
   };
 
   //跟後端取得商品細節頁資料
@@ -58,7 +58,7 @@ const ProductDetail = () => {
               <input
                 type="number"
                 onChange={(e) => {
-                  setAmount(e.target.value);
+                  setAmount(+e.target.value);
                 }}
                 value={amount}
               />

@@ -1,13 +1,10 @@
 import React from "react";
+import SlickHome from "../component/SlickHome";
 
 const Home = () => {
   return (
     <>
-      <div>Home</div>
-      <div>Home</div>
-      <div>Home</div>
-      <div>Home</div>
-      <div>Home</div>
+      <SlickHome />
     </>
   );
 };

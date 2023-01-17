@@ -1,0 +1,16 @@
+.homeSlick{
+    width:80%;
+    height:100%;
+    margin:auto;
+}
+
+.homeSlickImg{
+    width:100%;
+    height:800px;
+    img{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+        opacity: 0.5;
+    }
+}
