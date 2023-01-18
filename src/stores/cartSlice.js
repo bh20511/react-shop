@@ -16,6 +16,7 @@ if (localStorage.getItem("cart")?.length) {
   console.log("local", JSON.parse(localStorage.getItem("cart")));
   initialState.cart = [...JSON.parse(localStorage.getItem("cart"))];
 }
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,
