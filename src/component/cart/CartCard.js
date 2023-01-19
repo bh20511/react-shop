@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { deleteCart, minusCart, increaseCart } from "../../stores/cartSlice";
 
 const CartCard = (prop) => {
-  const { name, amount, sid } = prop.data;
+  const { name, amount, sid, price } = prop.data;
   //   console.log(data);
   const dispatch = useDispatch();
 
@@ -16,7 +16,9 @@ const CartCard = (prop) => {
         <div>
           <img src="" alt="" />
         </div>
-        <p>{name}</p>
+        <p>品名{name}</p>
+        <p>單價{price}</p>
+        <p>金額共：{price * amount}</p>
       </div>
       <div>
         <button

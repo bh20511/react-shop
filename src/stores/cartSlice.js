@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cart: [
     // {
-    //   sid: 0,
-    //   amount: 0,
-    //   name: "",
-    //   price: 0,
-    //   img: "",
+      // sid: 0,
+      // amount: 0,
+      // name: "",
+      // price: 0,
+      // img: "",
     // },
   ],
 };
@@ -22,7 +22,8 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addCart(state, action) {
-      const { sid, amount, name, price, img, inventory } = action.payload;
+      //一開始要sid 購買數量  商品名稱 單價 圖片 都是要用來顯示的
+      const { sid, amount, name, price, img} = action.payload;
       const index = state.cart.findIndex((value) => {
         return value.sid === sid;
       });
@@ -48,7 +49,9 @@ const cartSlice = createSlice({
       const index = state.cart.findIndex((value) => {
         return value.sid === sid;
       });
-      state.cart[index].amount -= 1;
+      if(state.cart[index].amount>=2){
+        state.cart[index].amount -= 1;
+      }
       localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     increaseCart(state, action) {

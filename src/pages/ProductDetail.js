@@ -22,16 +22,16 @@ const ProductDetail = () => {
   //加入購物車按鈕
   const handle = () => {
     const { price, name, img, inventory } = data[0];
-    console.log(sid, name, price, img, amount ,inventory);
+    // console.log(sid, name, price, img, amount ,inventory);
     dispatch(addCart({ sid, name, price, img, amount,inventory }));
   };
 
   //跟後端取得商品細節頁資料
   const getDetail = async function () {
-    console.log(sid);
+    // console.log(sid);
     const product_Detail_url = `http://localhost:3005/product/pageDetailApi/${sid}`;
     const result = await axios.get(product_Detail_url);
-    console.log(result.data);
+    // console.log(result.data);
     setData(result.data);
   };
   useEffect(() => {
