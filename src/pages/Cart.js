@@ -22,6 +22,8 @@ const Cart = () => {
   // 付款方式狀態
   const [payWay, setPayWay] = useState("現金");
 
+  const [orders_num, setOrders_num] = useState(0);
+
   useEffect(() => {
     let totalPrice = state.cart.reduce((a, b) => {
       return a + b.price * b.amount;
@@ -36,7 +38,7 @@ const Cart = () => {
         const orders = state.cart.map((e) => {
           return { sid: e.sid, amount: e.amount };
         });
-        console.log(orders);
+        // console.log(orders);
         const order_api = "http://localhost:3005/cart/createOrders";
         const { data } = await axios.post(order_api, {
           orders,
@@ -44,9 +46,11 @@ const Cart = () => {
           payWay,
         });
         if (data.output.success) {
-          console.log(data.output.order_nums);
-          alert("結帳成功");
-          setNowState(2);
+          console.log(data.output.orders_num);
+          // alert("結帳成功");
+          // setNowState(2);
+          // setOrders_num(data.output.orders_num);
+          //接下來清空購物車狀態 還有要清空 localstorage
         } else {
           alert("結帳失敗");
         }
@@ -108,7 +112,7 @@ const Cart = () => {
       {/* 完成訂單 */}
       {nowState === 2 && (
         <div>
-          <p>恭喜您完成訂單 您的訂單編號為：12345677</p>
+          <p>恭喜您完成訂單 您的訂單編號為：123456767</p>
         </div>
       )}
     </>
