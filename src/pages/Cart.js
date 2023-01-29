@@ -24,6 +24,7 @@ const Cart = () => {
 
   const [orders_num, setOrders_num] = useState(0);
 
+  //用來計算總金額
   useEffect(() => {
     let totalPrice = state.cart.reduce((a, b) => {
       return a + b.price * b.amount;
@@ -33,20 +34,25 @@ const Cart = () => {
 
   //寫送出訂單的按鈕
   const handleSubmit = async () => {
+    //先判斷有沒有登入以及購物車有沒有商品 有的話才送
     if (myAuth.authorised) {
       if (state.cart.length > 0) {
+        //要送的東西只有商品sid 跟 商品數量 然後由sid去後台撈 撈到再計算金額
         const orders = state.cart.map((e) => {
           return { sid: e.sid, amount: e.amount };
         });
-        // console.log(orders);
         const order_api = "http://localhost:3005/cart/createOrders";
+
+        //要送的東西 orders:物件陣列,會員編號,付款方式
         const { data } = await axios.post(order_api, {
           orders,
           member_sid: myAuth.member_sid,
           payWay,
         });
         if (data.output.success) {
-          console.log(data.output.orders_num);
+          console.log(data.output);
+          window.open(data.output.url, '_self')
+
           // alert("結帳成功");
           // setNowState(2);
           // setOrders_num(data.output.orders_num);

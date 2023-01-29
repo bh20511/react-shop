@@ -1,4 +1,3 @@
-// import
 import React from "react";
 import Nav from "./component/Nav";
 import Footer from "./component/Footer";
@@ -10,6 +9,8 @@ import ProductDetail from "./pages/ProductDetail";
 import Token from "./pages/Token";
 import Cart from "./pages/Cart";
 import CartCard from "./component/cart/CartCard";
+import PayConfirm from "./pages/PayConfirm";
+import CartOk from "./pages/CartOk";
 
 import { AuthContextProvider } from "./contexts/AuthContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -30,6 +31,8 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signUp" element={<SignUp />} />
+          <Route path="/payConfirm" element={<PayConfirm />} />
+          <Route path="/cartOk" element={<CartOk />} />
         </Routes>
         <Footer />
       </AuthContextProvider>
