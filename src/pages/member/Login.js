@@ -29,7 +29,7 @@ const Login = () => {
   }
 
   return (
-    <div style={{ width: "800px", margin: "0 auto" }}>
+    <div style={{ width: "600px",height:"81vh", margin: "0 auto" ,border:"1px solid black"}}>
       <form>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
