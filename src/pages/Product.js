@@ -37,17 +37,21 @@ const Product = () => {
 
   return (
     <div className={styled.container}>
-      <div >
+      <div className={styled.filterButton}>
         <button onClick={() => setCondition({...condition,category:0,page:1})}>全部商品</button>
         <button onClick={() => setCondition({...condition,category:1,page:1})}>狗狗商品</button>
         <button onClick={() => setCondition({...condition,category:2,page:1})}>貓貓商品 </button>
       </div>
       {/* 接下來傳進去分頁套件 要傳進去的有 總頁數 還有現在是哪一頁 */}
-      <div> <PaginationExample totalPages={totalPages} condition={condition} setCondition={setCondition}/> </div>
-      
-      {products && products.map((e, i) => {
-        return <Card key={e.sid} props={e} />;
-      })}
+
+      <div className={styled.cardContainer}>
+        {products && products.map((e, i) => {
+          return <Card key={e.sid} props={e} />;
+        })}
+      </div>
+      <div>
+        <PaginationExample totalPages={totalPages} condition={condition} setCondition={setCondition}/> 
+      </div>
     </div>
   );
 

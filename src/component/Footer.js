@@ -55,7 +55,7 @@ const Footer = () => {
 
           <a
             className="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
+            href="https://github.com/bh20511"
             role="button"
             data-mdb-ripple-color="dark"
           >
@@ -68,9 +68,9 @@ const Footer = () => {
         className="text-center text-dark p-3"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
       >
-        © 2020 Copyright:
+        © 2023 Copyright:
         <a className="text-dark" href="https://mdbootstrap.com/">
-          MDBootstrap.com
+          github/bh20511
         </a>
       </div>
     </footer>

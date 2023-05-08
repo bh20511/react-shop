@@ -20,16 +20,16 @@ export default class SlickHome extends Component {
         {/* <h2>Fade</h2> */}
         <Slider {...settings}>
           <div className={styled.homeSlickImg}>
-            <img src={"/大頭照.png"} />
+            <img src={"/封面5.png"} />
           </div>
           <div className={styled.homeSlickImg}>
-            <img src={"/大頭照.png"} />
+            <img src={"/封面6.png"} />
           </div>
           <div className={styled.homeSlickImg}>
-            <img src={"/大頭照.png"} />
+            <img src={"/封面3.png"} />
           </div>
           <div className={styled.homeSlickImg}>
-            <img src={"/大頭照.png"} />
+            <img src={"/封面4.png"} />
           </div>
         </Slider>
       </div>

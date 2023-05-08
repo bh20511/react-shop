@@ -5,7 +5,7 @@ const Card = ({ props }) => {
   const { sid, img, name, price, inventory, tags } = props;
   return (
     <>
-      <div className="card" style={{ width: "18rem" }}>
+      <div className="card round shadow" style={{ width: "18rem",marginBottom: "20px"}}>
         <img
           src={`http://localhost:3005/product/${img}`}
           className="card-img-top"

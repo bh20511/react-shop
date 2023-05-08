@@ -9,7 +9,7 @@ const ProductDetail = () => {
   //用於頁面顯示的data
   const [data, setData] = useState([]);
   //商品數量的狀態 之後要放入購物車
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
 
   //解構路由的sid 用於跟後端要資料的時候要帶入的東西
   const { sid } = useParams();
@@ -24,6 +24,7 @@ const ProductDetail = () => {
     const { price, name, img, inventory } = data[0];
     // console.log(sid, name, price, img, amount ,inventory);
     dispatch(addCart({ sid, name, price, img, amount,inventory }));
+    alert('已加入購物車');
   };
 
   //跟後端取得商品細節頁資料

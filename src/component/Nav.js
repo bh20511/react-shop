@@ -1,8 +1,13 @@
 import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
+import {  useSelector } from 'react-redux'
 
 const Nav = () => {
+
+  const state = useSelector((state) => state.cart)
+
+
   const { myAuth, logout } = useContext(AuthContext);
   // console.log(myAuth);
 
@@ -21,9 +26,18 @@ const Nav = () => {
       style={{ backgroundColor: "lightblue" }}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/#">
+        {/* <a className="navbar-brand" href="/#">
           Navbar
-        </a>
+        </a> */}
+        <Link to="/">
+          <div>
+            <img
+              style={{ width: "60px" }}
+              src="https://dotown.maeda-design-room.net/wp-content/uploads/2022/10/thing_dachshund_02.png"
+              alt=""
+            />
+          </div>
+        </Link>
         {/* <Link to="/#" className="navbar-brand">
           Navbar
         </Link> */}
@@ -40,7 +54,7 @@ const Nav = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav w-100">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 to="/home"
                 className="nav-link active"
@@ -50,7 +64,7 @@ const Nav = () => {
               >
                 首頁
               </Link>
-            </li>
+            </li> */}
             {/* <li className="nav-item">
               <a className="nav-link" href="#">
                 Features
@@ -73,7 +87,7 @@ const Nav = () => {
                 href="#"
                 style={actives.token}
               >
-                測試token頁面
+                領養專區
               </Link>
             </li>
 
@@ -87,10 +101,38 @@ const Nav = () => {
               }}
             >
               <>
-                <Link to="/cart" className="nav-link" style={actives.login}>
+                <Link to="/cart" 
+                  onClick={(e) => {
+                    if (state.cart !== undefined && state?.cart?.length > 0 ) {
+                      
+                    } else {
+                      e.preventDefault();
+                      console.log("false")
+                      alert('購物車尚無物品');
+                    }
+                  }}
+                  className="nav-link" style={actives.login}>
                   <i className="fa-solid fa-cart-shopping"></i>
                 </Link>
               </>
+              {/* <>
+                <Link
+                  to="/#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                  
+                    if (state.cartItems.length) {
+                      console.log(state.cartItems.length)
+                      navigate('/cart/')
+                    } else {
+                      alert('YOUR CART IS EMPTY!')
+                    }
+                    
+                    ;
+                  }}
+                  className="right-2 flex jusity-center items-center h-full"
+                ></Link>
+              </> */}
               {myAuth.authorised ? (
                 <>
                   <Link to="/login" className="nav-link" style={actives.login}>
