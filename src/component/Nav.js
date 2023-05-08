@@ -90,6 +90,9 @@ const Nav = () => {
                 領養專區
               </Link>
             </li>
+            <li>
+              
+            </li>
 
             <li
               className="nav-item"
@@ -115,24 +118,6 @@ const Nav = () => {
                   <i className="fa-solid fa-cart-shopping"></i>
                 </Link>
               </>
-              {/* <>
-                <Link
-                  to="/#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                  
-                    if (state.cartItems.length) {
-                      console.log(state.cartItems.length)
-                      navigate('/cart/')
-                    } else {
-                      alert('YOUR CART IS EMPTY!')
-                    }
-                    
-                    ;
-                  }}
-                  className="right-2 flex jusity-center items-center h-full"
-                ></Link>
-              </> */}
               {myAuth.authorised ? (
                 <>
                   <Link to="/login" className="nav-link" style={actives.login}>

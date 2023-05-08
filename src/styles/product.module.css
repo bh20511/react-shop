@@ -1,0 +1,40 @@
+@charset "UTF-8";
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: centr;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filterButton {
+  /* 當鼠標懸停時的樣式 */
+}
+.filterButton button {
+  background-color: #6badf3;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 2rem;
+  transition: background-color 0.2s ease;
+}
+.filterButton button:hover {
+  background-color: #e2f04b;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* 水平排列 */
+  padding-bottom: 20px; /* 下間距 */
+}
+
+@media screen and (max-width: 600px) {
+  .cardContainer {
+    flex-direction: column; /* 垂直排列 */
+    align-items: center;
+  }
+}/*# sourceMappingURL=product.module.css.map */
