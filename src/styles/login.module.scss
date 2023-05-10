@@ -67,6 +67,9 @@ body {
         width:190px;
         padding: 10px 0;
     }
+    .btn:hover{
+        background-color: #edfe6a;
+    }
     .btn + .btn{
         margin-left:20px;
     }

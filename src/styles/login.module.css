@@ -63,6 +63,9 @@ body {
   width: 190px;
   padding: 10px 0;
 }
+.form .btn:hover {
+  background-color: #edfe6a;
+}
 .form .btn + .btn {
   margin-left: 20px;
 }/*# sourceMappingURL=login.module.css.map */
