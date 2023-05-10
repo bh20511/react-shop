@@ -1,0 +1,118 @@
+.section2 {
+  margin-top: 30px;
+  display: flex;
+  padding: 120px;
+}
+.section2 .left {
+  width: 40%;
+  height: 300px;
+  background-color: pink;
+  margin: 0 0 0 80px;
+}
+.section2 .right {
+  width: 60%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  padding: 0 120px;
+}
+.section2 .right p:nth-child(1) {
+  font-size: 42px;
+  margin-bottom: 40px;
+  font: bold;
+}
+.section2 .right p:nth-child(2) {
+  font-size: 20px;
+}
+
+.section3 .wrap {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 100px;
+  margin: auto;
+  padding-top: 75px;
+}
+.section3 .item {
+  width: 370px;
+  margin: 0 15px;
+  text-align: center;
+  border: 10px solid #f9cec2;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px #f7b6ac;
+}
+.section3 .item .icon {
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+  margin: -75px auto 0;
+  font-size: 85px;
+  line-height: 150px;
+  border-radius: 50%;
+  color: #f5afac;
+  position: relative;
+}
+.section3 .item .icon:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-top: 10px solid #f9cec2;
+  border-right: 10px solid #f9cec2;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+  left: 0px;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+}
+.section3 .item .txt {
+  padding: 20px;
+}
+.section3 .item h3 {
+  color: #f5afac;
+}
+.section3 .item p {
+  color: #ccc;
+  text-align: left;
+}
+@keyframes swing {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+.section3 .item:hover i {
+  animation: swing 0.2s linear infinite alternate;
+}
+
+.section10 {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(83, 126, 243, 0.817);
+}
+.section10 div {
+  width: 33%;
+  height: 200px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section10 i {
+  font-size: 50px;
+  color: white;
+}
+.section10 p {
+  margin: 5px 0;
+  color: white;
+}
+.section10 p:nth-child(2) {
+  font-size: 30px;
+}/*# sourceMappingURL=home.module.css.map */

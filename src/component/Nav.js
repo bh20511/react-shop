@@ -37,10 +37,8 @@ const Nav = () => {
               alt=""
             />
           </div>
+          <span>寵物之家</span>
         </Link>
-        {/* <Link to="/#" className="navbar-brand">
-          Navbar
-        </Link> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -90,21 +88,16 @@ const Nav = () => {
                 領養專區
               </Link>
             </li>
-            <li>
-              
-            </li>
 
-            <li
+            <li 
               className="nav-item"
               style={{
-                width: "200px",
+                width: "20px",
                 margin: "0 0 0 auto",
                 display: "flex",
                 justifyContent: "center",
-              }}
-            >
-              <>
-                <Link to="/cart" 
+              }}>
+              <Link to="/cart" 
                   onClick={(e) => {
                     if (state.cart !== undefined && state?.cart?.length > 0 ) {
                       
@@ -116,8 +109,10 @@ const Nav = () => {
                   }}
                   className="nav-link" style={actives.login}>
                   <i className="fa-solid fa-cart-shopping"></i>
-                </Link>
-              </>
+              </Link>
+            </li>
+
+            <li>
               {myAuth.authorised ? (
                 <>
                   <Link to="/login" className="nav-link" style={actives.login}>
