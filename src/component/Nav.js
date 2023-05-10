@@ -115,7 +115,7 @@ const Nav = () => {
             <li>
               {myAuth.authorised ? (
                 <>
-                  <Link to="/login" className="nav-link" style={actives.login}>
+                  <Link to="/" className="nav-link" style={actives.login}>
                     {myAuth.nickname}
                   </Link>
                   <a
