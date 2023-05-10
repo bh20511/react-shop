@@ -12,7 +12,7 @@ const Home = () => {
       {/* 影片區 */}
       <section className={styled2.section2}>
         <div className={styled2.left}>
-          <iframe width="672" height="378" src="https://www.youtube.com/embed/g14_W-H3c20" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="700" height="400" src="https://www.youtube.com/embed/g14_W-H3c20" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div className={styled2.right}>
           <p>貓咪到底該怎麼吃才對</p>
@@ -22,6 +22,7 @@ const Home = () => {
         </div>
       </section>
 
+      {/* icon區 */}
       <section className={styled2.section3}>
         <div className={styled2.wrap}>
           <div className={styled2.item}>

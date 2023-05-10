@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import AuthContext from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import styled from "../../styles/login.module.scss"
 
 const Login = () => {
   const navigate = useNavigate();
@@ -29,7 +30,8 @@ const Login = () => {
   }
 
   return (
-    <div style={{ width: "600px",height:"81vh", margin: "0 auto" ,border:"1px solid black"}}>
+    <>
+      {/* <div style={{ width: "600px",height:"81vh", margin: "0 auto" ,border:"1px solid black"}}>
       <form>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
@@ -82,7 +84,49 @@ const Login = () => {
           </Link>
         </button>
       </form>
-    </div>
+      </div> */}
+      <div className={styled.container}>
+        <div className={styled.login}>
+          <div className={styled.form}>
+            <div className={styled.group}>
+              <h2>會員登入</h2>
+              <label htmlFor="email">帳號</label>
+              <input type="email" name="" id="email" 
+                onChange={(e) => {
+                  const mail = e.target.value;
+                  setMember({ ...member, email: mail });
+              }}/>
+            </div>
+
+            <div className={styled.group}>
+              <label htmlFor="password">密碼</label>
+              <input type="password" name="" id="password"
+                onChange={(e) => {
+                  const password = e.target.value;
+                  setMember({ ...member, password: password });
+                }}
+              />
+            </div>
+
+            <div className={styled.btnGroup}>
+              <button type="submit" className={styled.btn}
+                onClick={(e) => {
+                  e.preventDefault();
+                  member_login();
+              }}>
+                登入
+              </button>
+              <button className={styled.btn}>
+                <Link to="/signUp" className="nav-link">
+                  註冊會員
+                </Link>
+              </button>
+            </div>
+        </div>
+      </div>
+      </div>
+      
+    </>
   );
 };
 
