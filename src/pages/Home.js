@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div>
       <section className={styled.section1}>
-        <SlickHome />
+        <SlickHome style={{width:"100%"}}/>
       </section>
       
       {/* 影片區 */}

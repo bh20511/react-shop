@@ -24,13 +24,13 @@ const cartSlice = createSlice({
   reducers: {
     addCart(state, action) {
       //一開始要sid 購買數量  商品名稱 單價 圖片 都是要用來顯示的
-      const { sid, amount, name, price, img} = action.payload;
+      const { sid, amount, name, price, member_price, img} = action.payload;
       const index = state.cart.findIndex((value) => {
         return value.sid === sid;
       });
       console.log(index);
       if (index === -1) {
-        state.cart.push({ sid, name, img, price, amount });
+        state.cart.push({ sid, name, img, price, member_price, amount });
         console.log("first add", state.cart);
       } else {
         state.cart[index].amount += amount;

@@ -1,0 +1,13 @@
+.deskTop{
+    width: 20px;
+    margin: 0 0 0 auto;
+    display:flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+    .deskTop{
+        margin:0;
+    }
+    
+}

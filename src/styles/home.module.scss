@@ -1,3 +1,5 @@
+
+
 // 影片區
 .section2{
     margin-top:30px;
@@ -140,4 +142,15 @@
     p:nth-child(2) {
         font-size:30px;
       }
+}
+
+@media screen and (max-width: 600px) {
+    .section1{
+        width:100%;
+    }
+
+    .section2{
+        flex-direction: column;
+    }
+    
 }

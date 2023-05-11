@@ -4,6 +4,7 @@ import { deleteCart, minusCart, increaseCart } from "../../stores/cartSlice";
 
 const CartCard = (prop) => {
   const { name, amount, sid, price ,member_price} = prop.data;
+  console.log(member_price)
   //   console.log(data);
   const dispatch = useDispatch();
 

@@ -17,7 +17,7 @@ const Card = ({ props }) => {
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{tags}</p>
           <p className={styled.price}>售價：＄{price} </p>
-          <div clasName={styled.detail}>
+          <div className={styled.detail} >
             <p className={styled.memberPrice}> $會員價：{member_price}</p>
             <span>
               <Link to={`/product/${sid}`} className="btn btn-primary">

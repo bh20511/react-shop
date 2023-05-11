@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
 import {  useSelector } from 'react-redux'
+import styled from "../styles/nav.module.scss"
 
 const Nav = () => {
 
@@ -90,13 +91,8 @@ const Nav = () => {
             </li>
 
             <li 
-              className="nav-item"
-              style={{
-                width: "20px",
-                margin: "0 0 0 auto",
-                display: "flex",
-                justifyContent: "center",
-              }}>
+              className={`nav-item ${styled.deskTop}`}
+              >
               <Link to="/cart" 
                   onClick={(e) => {
                     if (state.cart !== undefined && state?.cart?.length > 0 ) {

@@ -8,6 +8,15 @@
     flex-wrap: wrap;
     min-height:100vh;
 }
+.detail{
+  display:flex;
+  justify-content: space-between;
+  span{
+    margin-top:-10px;
+    margin-right:5px;
+  }
+  
+}
 
 .filterButton{
     button {
@@ -35,6 +44,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .container{
+    width:100%;
+  }
     .cardContainer {
       flex-direction: column; /* 垂直排列 */
       align-items: center;
@@ -53,8 +65,6 @@
     font-size:20px;
   }
 
-  .detail{
-    display:flex;
-  }
+
 
   
