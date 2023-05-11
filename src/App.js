@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import SignUp from "./pages/member/SignUp";
 import Product from "./pages/Product";
 import ProductDetail from "./pages/ProductDetail";
-import Token from "./pages/Token";
+import Adopt from "./pages/Adopt";
 import Cart from "./pages/Cart";
 import CartCard from "./component/cart/CartCard";
 import PayConfirm from "./pages/PayConfirm";
@@ -26,7 +26,7 @@ const App = () => {
           <Route path="/product" element={<Product />} />
           <Route path="/product/:sid" element={<ProductDetail />} />
 
-          <Route path="/token" element={<Token />} />
+          <Route path="/adopt" element={<Adopt />} />
           <Route path="/cartcard" element={<CartCard />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />

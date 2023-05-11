@@ -20,7 +20,7 @@ const Product = () => {
   //這之是處理商品的路由 這隻可以處理 商品數量 計算分頁 還有商品篩選 依照你傳去的get參數而有不同
   const product_url = "http://localhost:3005/product/getlist";
   const getList = async function () {
-    const newCondition = {}
+    // const newCondition = {}
     
     const u = new URLSearchParams({...condition});
     const {data}= await axios.get(product_url+'?'+u.toString());

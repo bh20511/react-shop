@@ -21,9 +21,13 @@ const ProductDetail = () => {
 
   //加入購物車按鈕
   const handle = () => {
-    const { price, name, img, inventory } = data[0];
+    const { price, member_price ,name, img, inventory } = data[0];
+    if(amount>inventory){
+      alert('購買數量不可大於庫存')
+      return;
+    }
     // console.log(sid, name, price, img, amount ,inventory);
-    dispatch(addCart({ sid, name, price, img, amount,inventory }));
+    dispatch(addCart({ sid, name, price,member_price,img, amount,inventory }));
     alert('已加入購物車');
   };
 
@@ -37,13 +41,14 @@ const ProductDetail = () => {
   };
   useEffect(() => {
     getDetail();
-  }, []);
+  });
 
   console.log(state.cart);
   return (
-    <>
+    <div className={styled.view}>
       {data.length && (
-        <div className={styled.container}>
+        <div className={styled.section}> 
+          <div className={styled.container}>
           <div className={styled.product_all}>
             <div className={styled.imgwrap}>
               <img
@@ -51,7 +56,7 @@ const ProductDetail = () => {
                 alt=""
               />
             </div>
-            <div className={styled.productIntrodution}>
+            <div className={styled.product_Info}>
               <p>{data[0].name}</p>
               <p>庫存:{data[0].inventory}</p>
               <p>原價:{data[0].price}</p>
@@ -72,10 +77,17 @@ const ProductDetail = () => {
               </button>
             </div>
           </div>
-          <div>商品介紹</div>
+          <div className={styled.product_Introduction}>
+            <h3>商品介紹</h3>
+            <p>
+              {data[0].info}
+            </p>
+          </div>
         </div>
+        </div>
+        
       )}
-    </>
+    </div>
   );
 };
 

@@ -22,12 +22,12 @@ const Cart = () => {
   // 付款方式狀態
   const [payWay, setPayWay] = useState("現金");
 
-  const [orders_num, setOrders_num] = useState(0);
+  // const [orders_num, setOrders_num] = useState(0);
 
   //用來計算總金額
   useEffect(() => {
     let totalPrice = state.cart.reduce((a, b) => {
-      return a + b.price * b.amount;
+      return a + b.member_price * b.amount;
     }, 0);
     setTotalPrice(totalPrice);
   }, [state.cart]);

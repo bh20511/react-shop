@@ -6,6 +6,7 @@
     justify-content: centr;
     align-items: center;
     flex-wrap: wrap;
+    min-height:100vh;
 }
 
 .filterButton{
@@ -39,3 +40,21 @@
       align-items: center;
     }
   }
+
+  //下面是商品卡
+  .price{
+    text-decoration: line-through;
+    margin-bottom: 5px;
+  }
+
+  .memberPrice{
+    color:red;
+    font-weight:bold;
+    font-size:20px;
+  }
+
+  .detail{
+    display:flex;
+  }
+
+  

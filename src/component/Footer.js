@@ -41,7 +41,10 @@ const Footer = () => {
           <h4>訂閱電子報</h4>
           <form >
             <input type="text" />
-            <input type="submit" value="訂閱電子報"/>
+            <input type="submit" value="訂閱電子報" onClick={(e)=>{
+              e.preventDefault();
+              alert('感謝訂閱 電子報將於每個月五號寄出')
+            }}/>
           </form>
         </div>
       </div>

@@ -80,7 +80,7 @@ const Nav = () => {
             </li>
             <li className="nav-item">
               <Link
-                to="/token"
+                to="/adopt"
                 className="nav-link"
                 href="#"
                 style={actives.token}

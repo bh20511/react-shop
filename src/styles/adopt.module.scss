@@ -1,0 +1,46 @@
+.container{
+    min-height:100vh;
+    background-image: url("../../public/領養背景.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top:190px;
+    text-align: center;
+}
+
+.section{
+    background-color: rgba(250,250,250,.6);
+    width:1020px;
+    height:530px;
+    margin:0 0 0 340px;
+    backdrop-filter:blur(5px);
+
+    h3{
+        font-size:40px;
+        font-weight:400;
+    }
+
+    .web{
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        height:100%;
+        flex-wrap:wrap;
+        
+
+        .webitem{
+            // height:100%;
+            // border:1px solid black;
+
+            img{
+                height:200px;
+                width:200px;
+                border-radius:50%;
+                border: 2px solid black; // 設置邊框線樣式和顏色
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); // 設置陰影樣式和顏色 
+            }
+            p{
+                padding-top:15px;
+            }
+        }
+    }
+}

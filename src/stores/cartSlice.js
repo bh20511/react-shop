@@ -7,6 +7,7 @@ const initialState = {
       // amount: 0,
       // name: "",
       // price: 0,
+      // member_price:0,
       // img: "",
     // },
   ],

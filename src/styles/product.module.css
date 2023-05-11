@@ -37,4 +37,18 @@
     flex-direction: column; /* 垂直排列 */
     align-items: center;
   }
+}
+.price {
+  text-decoration: line-through;
+  margin-bottom: 5px;
+}
+
+.memberPrice {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.detail {
+  display: flex;
 }/*# sourceMappingURL=product.module.css.map */
