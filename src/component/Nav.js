@@ -38,7 +38,7 @@ const Nav = () => {
               alt=""
             />
           </div>
-          <span>寵物之家</span>
+          {/* <span>寵物之家</span> */}
         </Link>
         <button
           className="navbar-toggler"
@@ -108,7 +108,35 @@ const Nav = () => {
               </Link>
             </li>
 
-            <li> 
+            {myAuth.authorised ? (
+              <>
+              <li className="nav-link">
+                <Link to="/" className="nav-link" style={actives.login}>
+                      {myAuth.nickname}
+                </Link>
+              </li>
+              <li className="nav-link">
+              <a
+                    className="nav-link"
+                    href="#/"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      logout();
+                    }}
+                  >
+                    登出
+                  </a>
+              </li> 
+              
+              </>
+            ):(<li className="nav-link">
+              <Link to="/login" className="nav-link" style={actives.login}>
+                    Login
+                  </Link>
+            </li>)}
+
+
+            {/* <li> 
               {myAuth.authorised ? (
                 <>
                   <Link to="/" className="nav-link" style={actives.login}>
@@ -132,7 +160,7 @@ const Nav = () => {
                   </Link>
                 </>
               )}
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
