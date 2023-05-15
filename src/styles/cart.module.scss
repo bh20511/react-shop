@@ -1,0 +1,29 @@
+.cardbg{
+    background-color: #faf2b5;
+    width:800px;
+    padding:20px;
+    border-radius: 10px 10px 0 0;
+    // height:400px;
+    margin:200px auto;
+    margin-bottom: 0;
+}
+
+.gopay{
+    margin:0 auto;
+    background-color: #faf2b5;
+    width:800px;
+    padding:20px;
+    border-radius:  0 0 10px 10px;
+    // text-align: center;
+
+    button{
+        border-radius: 5px;
+        // border:1px;
+        padding:5px;
+        margin-right:10px;
+    }
+}
+
+.avtive{
+    border:20px solid black;
+}

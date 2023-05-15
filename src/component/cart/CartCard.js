@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteCart, minusCart, increaseCart } from "../../stores/cartSlice";
-
+import styled from "../../styles/cartCard.module.scss"
 const CartCard = (prop) => {
-  const { name, amount, sid, price ,member_price} = prop.data;
+  const { name, amount, sid, price ,member_price ,img} = prop.data;
   console.log(member_price)
   //   console.log(data);
   const dispatch = useDispatch();
@@ -12,17 +12,16 @@ const CartCard = (prop) => {
   //     dispatch(deleteCart({ sid }));
   //   };
   return (
-    <div>
-      <div>
+    <div className={styled.card}>
+      <div className={styled.info}>
         <div>
-          <img src="" alt="" />
+          <p>品名：{name}</p>
+          <p>原價：{price}</p>
+          <p>會員價：{member_price}</p>
+          <p>金額共：{member_price * amount}</p>
         </div>
-        <p>品名：{name}</p>
-        <p>原價：{price}</p>
-        <p>會員價：{member_price}</p>
-        <p>金額共：{member_price * amount}</p>
-      </div>
-      <div>
+
+        <div>
         <button
           onClick={() => {
             dispatch(minusCart({ sid }));
@@ -45,7 +44,16 @@ const CartCard = (prop) => {
         >
           <i className="fa-solid fa-trash"></i>
         </button>
+        </div>
+
+        <div>
+            <img src={`http://localhost:3005/product/${img}`} />
+        </div>
+
+        
       </div>
+      
+      
       <div></div>
     </div>
   );

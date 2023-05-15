@@ -5,6 +5,7 @@ import CartCard from "../component/cart/CartCard";
 import axios from "axios";
 import AuthContext from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import styled from "../styles/cart.module.scss";
 
 const Cart = () => {
   //   要檢查登入狀態 如果沒登入不能送出結帳
@@ -21,6 +22,12 @@ const Cart = () => {
 
   // 付款方式狀態
   const [payWay, setPayWay] = useState("現金");
+
+  // 付款按鈕外觀狀態
+  const [click, setClick] = useState(0);
+  // 付款按鈕外觀狀態
+  const [click1, setClick1] = useState(0);
+
 
   // const [orders_num, setOrders_num] = useState(0);
 
@@ -52,6 +59,9 @@ const Cart = () => {
         if (data.output.success) {
           console.log(data.output);
           window.open(data.output.url, '_self')
+          if(payWay === "現金") {
+            alert("感謝您購買請之後到店內付現");
+          }
 
           // alert("結帳成功");
           // setNowState(2);
@@ -70,10 +80,10 @@ const Cart = () => {
   //     const dispatch = useDispatch();
 
   return (
-    <>
+    <div style={{minHeight:"100vh"}}>
       {/* 修改訂單＆確認訂單 都要顯示 */}
       {(nowState === 0 || nowState === 1) && (
-        <div>
+        <div className={styled.cardbg}>
           {state.cart.map((e, i) => {
             return <CartCard data={e} key={i} />;
           })}
@@ -82,7 +92,7 @@ const Cart = () => {
       )}
       {/* 修改訂單部分 */}
       {nowState === 0 && (
-        <div>
+        <div className={styled.gopay}>
           <button
             onClick={() => {
               setNowState(1);
@@ -94,9 +104,15 @@ const Cart = () => {
       )}
       {/* 確認訂單部分 */}
       {nowState === 1 && (
-        <div>
+        <div className={styled.gopay}>
           <p>付款方式</p>
-          <button onClick={() => setPayWay("現金")}>現金</button>
+          <button className={`${click === 1 ? "active" : ""}`}
+            onClick={() => {
+              setPayWay("現金");
+              setClick(1);
+            }}>現金
+          </button>
+
           <button onClick={() => setPayWay("LinePay")}>LinePay</button>
           <button
             onClick={() => {
@@ -117,11 +133,11 @@ const Cart = () => {
       )}
       {/* 完成訂單 */}
       {nowState === 2 && (
-        <div>
+        <div className={styled.gopay}>
           <p>恭喜您完成訂單 您的訂單編號為：123456767</p>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

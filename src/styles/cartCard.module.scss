@@ -1,4 +1,15 @@
-// .bg{
-//     width:400px;
-//     background-color: #fff;
-// }
+.info{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.card{
+    p{
+        margin-bottom:10px;
+    }
+
+    img{
+        width:200px;
+        height:200px;
+    }
+}

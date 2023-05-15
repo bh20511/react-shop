@@ -1,9 +1,14 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import styled from "../styles/cart.module.scss";
+// import { withTheme } from "styled-components";
+import { useDispatch } from "react-redux";
+import { deleteAllCart} from "../stores/cartSlice";
 
 const PayConfirm = () => {
 
+    const dispatch = useDispatch();
     const location = useLocation();
     const transactionId = new URLSearchParams(location.search).get('transactionId')
     const orderId = new URLSearchParams(location.search).get('orderId')
@@ -20,12 +25,16 @@ const PayConfirm = () => {
 
     useEffect(() => {
         confirm();
+        dispatch(deleteAllCart())
     }, [])
 
 
     return (
-        <div>
-            付款成功
+        <div style={{minHeight:"70vh"}}>
+            <div className={styled.cardbg} >
+                LinePay付款成功感謝您的購買
+            </div>
+            
         </div>
     );
 };
