@@ -44,6 +44,14 @@
 }
 
 @media screen and (max-width: 600px) {
+
+  .filterButton{
+    button{
+      width:100px;
+      padding:8px 2px;
+      margin:32px 10px;
+    }
+  }
   .container{
     width:100%;
   }
@@ -66,5 +74,3 @@
   }
 
 
-
-  
